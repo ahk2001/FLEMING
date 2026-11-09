@@ -1209,7 +1209,7 @@
       .hero-banner-title {
         font-size: clamp(1.15rem, 4.4vw, 1.45rem);
         line-height: 1.15;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0;
         text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
       }
 
@@ -1218,10 +1218,34 @@
         display: none !important;
       }
 
-      .btn-hero-courses {
-        padding: 0.48rem 0.95rem;
-        font-size: 0.78rem;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+      /* Botão retirado da frente da imagem no mobile */
+      .desktop-hero-actions {
+        display: none !important;
+      }
+
+      /* Botão posicionado abaixo da imagem no mobile com layout full-width moderno */
+      .hero-mobile-actions {
+        display: flex !important;
+        width: 100%;
+      }
+      .btn-hero-mobile-cta {
+        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.85rem 1.25rem;
+        background-color: var(--pill-green);
+        color: #ffffff;
+        font-size: 0.94rem;
+        font-weight: 700;
+        border-radius: 14px;
+        box-shadow: 0 4px 14px rgba(30, 124, 98, 0.28);
+        transition: transform 0.2s ease, background-color 0.2s ease;
+      }
+      .btn-hero-mobile-cta:hover {
+        background-color: var(--pill-green-hover);
+        transform: translateY(-2px);
       }
 
       /* Prova social posicionada FORA da foto no mobile, logo abaixo do banner */
@@ -1336,6 +1360,12 @@
       .card-footer {
         flex-direction: row;
         justify-content: space-between;
+      }
+      .hero-mobile-actions {
+        display: none !important;
+      }
+      .desktop-hero-actions {
+        display: flex !important;
       }
       .hero-banner-wrapper {
         position: relative;
