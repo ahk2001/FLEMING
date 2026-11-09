@@ -1160,7 +1160,7 @@
         display: flex;
       }
 
-      /* HERO MOBILE OTIMIZADO: IMAGEM AMPLA, LIMPA E SEM POLUIÇÃO */
+      /* HERO MOBILE HORIZONTAL: IMAGEM AMPLA SEM CORTES, APENAS TÍTULO E BOTÃO */
       .hero-banner-wrapper {
         display: flex;
         flex-direction: column;
@@ -1169,30 +1169,32 @@
       }
 
       .hero-banner {
-        /* Altura generosa no mobile para a imagem respirar e aparecer com clareza */
-        min-height: 480px;
-        height: 64vh;
-        max-height: 560px;
-        padding: 1.5rem 1.15rem 1.35rem;
-        border-radius: 20px;
-        justify-content: flex-end; /* Conteúdo apoiado suavemente na base */
+        /* Proporção horizontal widescreen (16:9) para não cortar as laterais da imagem */
+        width: 100%;
+        min-height: 220px;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        padding: 1rem 0.95rem 0.85rem;
+        border-radius: 16px;
+        justify-content: flex-end; /* Apoiado na base com total leveza */
         align-items: flex-start;
       }
 
       .hero-banner-bg {
-        /* Imagem nítida, iluminada e com enquadramento perfeito da fachada e dos veículos */
+        /* Imagem ampla, nítida e enquadrada sem cortar a fachada nem os carros */
         filter: brightness(0.96) contrast(1.04);
-        object-position: center 25%;
+        object-fit: cover;
+        object-position: center center;
       }
 
       .hero-banner::after {
-        /* Degradê suave APENAS na base para legibilidade do texto, deixando 65%+ do topo e centro 100% livres e visíveis */
+        /* Degradê suave e discreto apenas na base para dar leitura ao título e botão */
         background: linear-gradient(
           to top,
-          rgba(18, 16, 13, 0.94) 0%,
-          rgba(18, 16, 13, 0.72) 28%,
-          rgba(18, 16, 13, 0.22) 50%,
-          rgba(18, 16, 13, 0) 70%
+          rgba(18, 16, 13, 0.88) 0%,
+          rgba(18, 16, 13, 0.50) 32%,
+          rgba(18, 16, 13, 0.10) 58%,
+          rgba(18, 16, 13, 0) 78%
         );
       }
 
@@ -1205,25 +1207,21 @@
       }
 
       .hero-banner-title {
-        font-size: clamp(1.55rem, 5.6vw, 1.95rem);
+        font-size: clamp(1.15rem, 4.4vw, 1.45rem);
         line-height: 1.15;
-        margin-bottom: 0.45rem;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
+        margin-bottom: 0.5rem;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
       }
 
+      /* Texto descritivo removido no mobile para visual 100% limpo */
       .hero-banner-desc {
-        font-size: 0.84rem;
-        line-height: 1.4;
-        margin-bottom: 1rem;
-        color: rgba(255, 253, 249, 0.94);
-        max-width: 320px;
-        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+        display: none !important;
       }
 
       .btn-hero-courses {
-        padding: 0.65rem 1.15rem;
-        font-size: 0.84rem;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+        padding: 0.48rem 0.95rem;
+        font-size: 0.78rem;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
       }
 
       /* Prova social posicionada FORA da foto no mobile, logo abaixo do banner */
